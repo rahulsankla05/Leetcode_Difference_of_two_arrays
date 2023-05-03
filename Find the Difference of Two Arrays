@@ -1,0 +1,27 @@
+Java Code
+class Solution {
+    public List<List<Integer>> findDifference(int[] nums1, int[] nums2) {
+        Set <Integer> s1=new HashSet<>();
+        Set <Integer> s2=new HashSet<>();
+        for(int num: nums1){
+            s1.add(num);
+        }
+        for (int num: nums2){
+            s2.add(num);
+        }
+// create  arraylist to Store unique elements from hashset s1 & s2
+        List<Integer> u1=new ArrayList<>(s1);
+        u1.removeAll(s2);
+        List<Integer> u2=new ArrayList<>(s2);
+        u2.removeAll(s1);
+        // now store all these values to 2-D arraylist in java//
+        List<List<Integer>> ans=new ArrayList<>();
+        ans.add(u1);
+        ans.add(u2);
+        return ans;
+    }
+}
+
+#Python_code
+return ((set(nums2)-set(nums1)),set(nums1)-set(nums2))
+# Simple one line code_RS
